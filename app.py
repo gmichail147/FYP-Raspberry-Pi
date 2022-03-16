@@ -51,7 +51,6 @@ def get_sensor_data():
     data['pm1'] = float(particles.pm_ug_per_m3(1.0))
     data['pm25'] = float(particles.pm_ug_per_m3(2.5))
     data['pm10'] = float(particles.pm_ug_per_m3(10))
-
     
     return data
 
@@ -62,12 +61,6 @@ app = Flask(__name__)
 def index():
     data = get_sensor_data()
     return render_template('index.html', data=sorted(data.items()))
-
-@app.route('/download')
-def download():
-    return jsonify(get_sensor_data())
-
-
 
 
 if __name__ == '__main__':
