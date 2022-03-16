@@ -12,7 +12,7 @@ bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus) # BME280 temperature, humidity and pressure sensor
 
 def get_sensor_data():
-	data = {}
+	data = {} #create a dictinary for the data
 	data['humidity'] = bme280.get_humidity()
 	data['pressure'] = bme280.get_pressure()
 	data['temperature'] = bme280.get_temperature()
