@@ -62,6 +62,11 @@ def index():
     data = get_sensor_data()
     return render_template('index.html', data=sorted(data.items()))
 
+@app.route('/camera')
+def camera():
+    
+    return render_template('camera.html')
+
 
 if __name__ == '__main__':
     
